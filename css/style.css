@@ -676,7 +676,6 @@ footer{
         justify-content: center;
         align-content: center;
         align-content: flex-start;
-        margin-top: 100px;
         min-height: 60vh;
     }
 
@@ -693,6 +692,7 @@ footer{
     .image ,.image img{
         width: 200px;
         height: 200px;
+        margin-bottom: 10px;
     }
     .row{
         display: flex;
