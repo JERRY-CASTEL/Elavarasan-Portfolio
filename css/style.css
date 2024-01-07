@@ -87,63 +87,39 @@ body {
 }
 
 /* NAVIGATION */
-/* NAVIGATION */
-nav {
-    position: fixed;
-    display: flex;
+nav{
+    position: fixed ;
+    display: flex ;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     height: 90px;
     line-height: 90px;
-    background: var(--body-color);
-    padding-inline: 9vh;
+    background:var(--body-color);
+    padding-inline:9vh;
     transition: .3s;
     z-index: 100;
 }
 
-.nav-logo {
-    order: -1;
-    justify-content: flex-start;
-    display: flex;
-    align-items: center;
+.nav-logo{
+    position: relative ;
 }
 
-.nav-logo img {
-    width: 100px; /* Set a fixed width for the logo */
-    margin-right: 20px; /* Adjust margin as needed for spacing */
-}
-
-/* ... (other styles) */
-
-
-/* ... (other styles) */
-
-
-.nav-logo img{
-    
-    width: 80px;
-    height: 40px;
-}
-
-.nav-name {
+.nav-name{
     font-size: 30px;
     font-weight: 600;
     color: var(--text-color-third);
 }
 
-.nav-menu,
-.nav_menu_list {
+.nav-menu,.nav_menu_list{
     display: flex;
+
+} 
+.nav-menu, .nav_list{
+    list-style: none ;
+    position: relative ;
 }
 
-.nav-menu,
-.nav_list {
-    list-style: none;
-    position: relative;
-}
-
-.nav-link {
+.nav-link{
     text-decoration: none;
     color: var(--text-color-second);
     font-weight: 500;
@@ -151,11 +127,9 @@ nav {
     margin-inline: 20px;
 }
 
-.nav-menu-btn {
+.nav-menu-btn{
     display: none;
 }
-
-/* ... (other styles) */
 
 
 
@@ -425,14 +399,6 @@ h3{
 
 /* CONTACT BOX */
 
-.contact-info a{
-    text-decoration: none !important;
-    color: var(--color-white);
-    padding-block: 5px;
-}
-.contact-info i{
-    padding-inline: 2px;
-}
 .contact-info{
     position: relative;
     display: flex;
@@ -508,46 +474,6 @@ textarea{
     resize: none;
 }
 
-.nav_list a {
-    position: relative;
-    text-decoration: none;
-    color: black; /* Set your desired text color */
-}
-
-.nav_list a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px; /* Set your desired underline height */
-    background-color: var(--first-color-hover); /* Set your desired underline color */
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: width 0.5s ease; /* Set your desired transition properties */
-}
-
-.nav_list a:hover::after {
-    width: 100%;
-}
-
-
-.footer_menu_list a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background-color: var(--first-color-hover);
-    margin: 0 auto;
-    display: block;
-    padding-bottom: 0; /* Add this line */
-}
-
-.footer_menu_list a:hover::after {
-    position: relative;
-    left: 13%;
-    width: 100%;
-    transition: width 0.5s linear;
-}
-
 footer{
     display: flex;
     justify-content: center;
@@ -619,12 +545,6 @@ footer{
 /* MEDIA QUERY == 900 PX */
 
 @media only screen and (max-width: 800px) {
-    
-    .nav-logo img{
-        width: 70px;
-        height: 30px;
-    }
-
     .nav-button{
         display: none;
     }
@@ -659,23 +579,21 @@ footer{
         align-items: center;
         justify-content: center;
     }
-    
+
     .featured-box{
         flex-direction: column;
         justify-content: center;
         
         height: 100vh;
     }
-    #about{
-        margin-top: 140px;
-      
-    }
+
     .featured-text{
         width: 100%;
         order: 2;
         justify-content: center;
         align-content: center;
         align-content: flex-start;
+        margin-top: 100px;
         min-height: 60vh;
     }
 
@@ -692,7 +610,6 @@ footer{
     .image ,.image img{
         width: 200px;
         height: 200px;
-        margin-bottom: 10px;
     }
     .row{
         display: flex;
