@@ -850,8 +850,8 @@ footer{
         width: 100%;
         width: 100%;
         height: 100%;
-        margin-top: 250px;
-        margin-bottom: 30%;
+        margin-top: 270px;
+        margin-bottom: 20%;
     }
 
 
@@ -950,7 +950,7 @@ footer{
 @media only screen and (max-width: 355px) {
    
     
-    .featured-box{
+    .featured-box{  
         flex-direction: column;
         justify-content: center;
         
