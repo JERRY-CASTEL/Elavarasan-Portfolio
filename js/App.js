@@ -47,7 +47,8 @@ sr.reveal('.featured-text-info', { delay: 300 });
 sr.reveal('.featured-text-btn', { delay: 200 });
 sr.reveal('.featured-image', { delay: 300 });
 
-sr.reveal('.project-box',{interval:200})
+sr.reveal('.container-Project', {interval:200})
+
 
 sr.reveal('.top-header',{})
 
@@ -113,3 +114,54 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
   
+// SEND MAIL
+function sendEmail(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  // Use your actual service ID and template ID
+  emailjs.send('service_ybkwtsa', 'template_2xlv88m', {
+      user_name: name,
+      user_email: email,
+      message: message,
+  })
+  .then(function () {
+      console.log('SUCCESS!');
+      // Clear the form fields after the form is submitted
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+  }, function (error) {
+      console.log('FAILED...', error);
+  });
+}
+
+// DOWNLOAD CV
+
+// Select all elements with the class 'DownloadCV'
+var downloadButtons = document.querySelectorAll('.DownloadCV');
+
+// Add an event listener to each button
+downloadButtons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    // Replace 'path/to/your/cv.pdf' with the actual path to your CV file
+    var fileUrl = 'https://drive.google.com/uc?export=download&id=1nedEWrilscTgfyVV0evG_Ip2UPPvseA7';
+    
+    // Create a temporary anchor element
+    var downloadLink = document.createElement('a');
+    downloadLink.href = fileUrl;
+    downloadLink.download = 'Elavarasan CV.pdf'; // You can change the downloaded file name here
+
+    // Append the anchor element to the document
+    document.body.appendChild(downloadLink);
+
+    // Trigger a click event on the anchor element
+    downloadLink.click();
+
+    // Remove the anchor element from the document
+    document.body.removeChild(downloadLink);
+  });
+});
